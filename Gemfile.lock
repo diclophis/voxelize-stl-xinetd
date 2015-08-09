@@ -1,0 +1,17 @@
+GIT
+  remote: git://github.com/craft-bin/mc-schematic.git
+  revision: d5bea69b6d42e7d365937f924e9d24b92f797a9c
+  specs:
+    mc-schematic (0.0.1)
+      nbtfile (~> 0.2.0)
+
+GEM
+  remote: https://rubygems.org/
+  specs:
+    nbtfile (0.2.0)
+
+PLATFORMS
+  ruby
+
+DEPENDENCIES
+  mc-schematic!
