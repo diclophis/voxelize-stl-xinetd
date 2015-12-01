@@ -2,6 +2,8 @@
 
 $: << "/Users/mavenlink/workspace/mavencraft"
 $: << "/Users/mavenlink/workspace/mavencraft/diclophis"
+$: << "/home/mavencraft/mavencraft"
+$: << "/home/mavencraft/mavencraft/diclophis"
 
 #require 'mc-schematic'
 require 'diclophis_world_painter'
@@ -11,14 +13,14 @@ require 'diclophis_world_painter'
 #system("test -e model.dat || ./testVox model.vox > model.dat") or exit 2
 
 oox = (ARGV[0].to_i) #-1024 + (256 * 22)
-ooy = -4 #-149/512 #-42/256 # 10/128 # 36/64 # 48/32
+ooy = -7 #-149/512 #-42/256 # 10/128 # 36/64 # 48/32
 ooz = (ARGV[1].to_i) #-1024
 sleep rand*3.0
 global_painter = DiclophisWorldPainter.new(true, oox, ooy, ooz)
 puts "connected #{ARGV}"
 
 global_painter.async do
-  File.readlines(ARGV[2]).each do |line|
+  STDIN.readlines.each do |line|
     x,y,z = line.split(",")
     #puts x,y,z
     #t = (rand > 0.0001) ? global_painter.quartz_type : global_painter.glow_type
@@ -27,8 +29,7 @@ global_painter.async do
     #t = global_painter.quartz_type
     #t = global_painter.glass_type
     global_painter.place(x.to_i, y.to_i, z.to_i, t)
-    sleep 0.00333
-    $stdout.write(".")
+    #sleep 0.000333
   end
 end
 
