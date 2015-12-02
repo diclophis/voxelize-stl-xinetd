@@ -13,14 +13,14 @@ require 'diclophis_world_painter'
 #system("test -e model.dat || ./testVox model.vox > model.dat") or exit 2
 
 oox = (ARGV[0].to_i) #-1024 + (256 * 22)
-ooy = -7 #-149/512 #-42/256 # 10/128 # 36/64 # 48/32
+ooy = 0 #-149/512 #-42/256 # 10/128 # 36/64 # 48/32
 ooz = (ARGV[1].to_i) #-1024
 sleep rand*3.0
 global_painter = DiclophisWorldPainter.new(true, oox, ooy, ooz)
 puts "connected #{ARGV}"
 
 global_painter.async do
-  STDIN.readlines.each do |line|
+  STDIN.readlines.shuffle.each do |line|
     x,y,z = line.split(",")
     #puts x,y,z
     #t = (rand > 0.0001) ? global_painter.quartz_type : global_painter.glow_type

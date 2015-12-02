@@ -6,4 +6,7 @@
 MAVENCRAFT_SERVER=localhost
 export MAVENCRAFT_SERVER
 
-nc -k -l 0.0.0.0 1234 | bash main.sh | xargs -t -P8 -I{} bash -c '{}'
+echo > /tmp/voxelizer-pipe
+chmod 777 /tmp/voxelizer-pipe
+
+tail --retry -f /tmp/voxelizer-pipe | bash /home/mavencraft/voxelize-stl-xinetd/main.sh | xargs -t -P8 -I{} bash -c '{}'
