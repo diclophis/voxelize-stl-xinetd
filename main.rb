@@ -20,7 +20,7 @@ global_painter = DiclophisWorldPainter.new(true, oox, ooy, ooz)
 puts "connected #{ARGV}"
 
 global_painter.async do
-  STDIN.readlines.shuffle.each do |line|
+  STDIN.readlines.each do |line|
     x,y,z = line.split(",")
     #puts x,y,z
     #t = (rand > 0.0001) ? global_painter.quartz_type : global_painter.glow_type

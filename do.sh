@@ -6,6 +6,7 @@
 MAVENCRAFT_SERVER=localhost
 export MAVENCRAFT_SERVER
 
+rm /tmp/voxelizer-pipe
 echo > /tmp/voxelizer-pipe
 chmod 777 /tmp/voxelizer-pipe
 
