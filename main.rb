@@ -2,22 +2,23 @@
 
 $: << "/Users/mavenlink/workspace/mavencraft"
 $: << "/Users/mavenlink/workspace/mavencraft/diclophis"
-$: << "/home/mavencraft/mavencraft"
-$: << "/home/mavencraft/mavencraft/diclophis"
+$: << "/home/minecraft/mavencraft"
+$: << "/home/minecraft/mavencraft/diclophis"
 
-#require 'mc-schematic'
 require 'diclophis_world_painter'
 
 #model_path = ARGV[0]
 #system("test -e model.vox || ./voxelizer 250 8 #{model_path} model.vox") or exit 2
 #system("test -e model.dat || ./testVox model.vox > model.dat") or exit 2
 
-oox = (ARGV[0].to_i) #-1024 + (256 * 22)
-ooy = 0 #-149/512 #-42/256 # 10/128 # 36/64 # 48/32
-ooz = (ARGV[1].to_i) #-1024
+size = (ARGV[0].to_i)
+oox = (ARGV[1].to_i) #-1024 + (256 * 22)
+ooy = (ARGV[2].to_i) #(0.5 * size.to_f).to_i # 10/128 # 36/64 # 48/32
+ooz = (ARGV[3].to_i) #-1024
+
 sleep rand*3.0
 global_painter = DiclophisWorldPainter.new(true, oox, ooy, ooz)
-puts "connected #{ARGV}"
+puts "connected #{size} #{ARGV}"
 
 global_painter.async do
   STDIN.readlines.each do |line|

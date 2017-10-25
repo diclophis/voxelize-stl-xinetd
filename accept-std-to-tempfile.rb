@@ -6,7 +6,7 @@ require 'zlib'
 require 'stringio'
 
 p = nil
-Dir::Tmpname.create('voxelize-stl-xinetd') { |path| p = path + ".stl" }
+Dir::Tmpname.create('voxelize-stl-xinetd', "/home/minecraft/tmp") { |path| p = path + ".stl" }
 
 f = File.new(p, "a+")
 
@@ -55,5 +55,5 @@ f.close
 ##Zlib::GzipReader.new(read_from_stdin_out_from_me)
 #f.write(gzip.read)
 
-system("echo #{File.basename(p)} >> /tmp/voxelizer-pipe")
+#system("echo #{File.basename(p)} >> /tmp/voxelizer-pipe")
 $stdout.write(p)
