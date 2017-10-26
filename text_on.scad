@@ -51,7 +51,7 @@ Additional arguments for text_on_sphere():
 // Defaults for all modules
 default_t="text_on";
 default_size = 4; //TODO - Can we make this 10?? To match internal size? There is an underlying value in text() -- This masks that.
-default_font = "Liberation Mono";
+default_font = "TakaoMincho";
 default_spacing = 1; //Spacing between characters. There is an underlying value in text() -- This masks that. We try and match it here.
 default_rotate  = 0; // text rotation (clockwise)
 default_center  = true; //Text-centering

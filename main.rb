@@ -25,8 +25,8 @@ global_painter.async do
     x,y,z = line.split(",")
     #puts x,y,z
     #t = (rand > 0.0001) ? global_painter.quartz_type : global_painter.glow_type
-    t = global_painter.type
-    #t = global_painter.emerald_type
+    #t = global_painter.type
+    t = global_painter.emerald_type
     #t = global_painter.quartz_type
     #t = global_painter.glass_type
     global_painter.place(x.to_i, y.to_i, z.to_i, t)
@@ -62,3 +62,5 @@ global_painter.async do
   end
 end
 =end
+
+puts global_painter.client.command_count
