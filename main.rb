@@ -15,6 +15,7 @@ size = (ARGV[0].to_i)
 oox = (ARGV[1].to_i) #-1024 + (256 * 22)
 ooy = (ARGV[2].to_i) #(0.5 * size.to_f).to_i # 10/128 # 36/64 # 48/32
 ooz = (ARGV[3].to_i) #-1024
+type = (ARGV[4])
 
 sleep rand*3.0
 global_painter = DiclophisWorldPainter.new(true, oox, ooy, ooz)
@@ -26,10 +27,10 @@ global_painter.async do
     #puts x,y,z
     #t = (rand > 0.0001) ? global_painter.quartz_type : global_painter.glow_type
     #t = global_painter.type
-    t = global_painter.emerald_type
+    #t = global_painter.emerald_type
     #t = global_painter.quartz_type
     #t = global_painter.glass_type
-    global_painter.place(x.to_i, y.to_i, z.to_i, t)
+    global_painter.place(x.to_i, y.to_i, z.to_i, type)
     #sleep 0.000333
   end
 end
